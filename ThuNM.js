@@ -24,7 +24,6 @@ Viết hàm tinhToan(x, y, pt) dùng switch-case trả về kết quả của x 
 Dùng vòng lặp for duyệt mảng pheptinh, gọi hàm và in: "12 + 5 = 17".
 Với phép chia, làm tròn 2 chữ số thập phân (dùng toFixed(2)).*/
 
-const pheptinh = ["+", "-", "*", "/"] 
 const tinhToan = (a, b, pt) => {
     switch (pt) { 
         case '+' : 
@@ -39,6 +38,7 @@ const tinhToan = (a, b, pt) => {
     }
 }
 const a = 12, b = 5; 
+const pheptinh = ["+", "-", "*", "/"];
 for (let i =0; i < pheptinh.length; i++){
     console.log (`${a} ${pheptinh[i]} ${b} = ${tinhToan(a,b,pheptinh[i])}`);
 
