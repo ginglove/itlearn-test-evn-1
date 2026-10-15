@@ -75,3 +75,13 @@ const khoHang = [
 - Lọc các sản phẩm cần nhập thêm (Sắp hết hoặc Hết hàng).
 - Tính tổng giá trị tồn kho theo từng loại (vpp và dientu).
 
+Bài tập 7: Dành cho học viên đã có nền tảng. Tính tiền điện theo bậc thang.
+Kiến thức: arrow function, vòng lặp, điều kiện nhiều bậc, tích lũy, tìm max.
+Biểu giá điện lũy tiến:
+Bậc 1 (0–50 kWh): 1.800đ   |   Bậc 2 (51–100): 1.900đ
+Bậc 3 (101–200): 2.200đ   |   Bậc 4 (>200): 2.800đ
+const soDien = [45, 90, 150, 320];   // số kWh của 4 hộ
+- Viết arrow function tinhTienDien(kWh) tính tiền theo bậc thang lũy tiến.
+- Dùng vòng lặp in tiền điện từng hộ.
+- Tìm và in ra hộ có hóa đơn cao nhất.
+- (Thưởng) Cộng VAT 8% và in tổng tiền cả 4 hộ.
