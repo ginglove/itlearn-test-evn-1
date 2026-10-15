@@ -1,4 +1,4 @@
-Bài tập 1: Viết code JavaScript thuần giải quyết vấn đề thực tế.
+Bài tập 1 : Viết code JavaScript thuần giải quyết vấn đề thực tế..
 Kiến thức: biến, vòng lặp for, if/else, arrow function.
 Cho mảng nhiệt độ 7 ngày trong tuần:
 const nhietDo = [28, 35, 31, 26, 38, 30, 33];
