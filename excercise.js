@@ -174,9 +174,28 @@ const nhanVien = [
 - Duyệt mảng, tính thực nhận = luong * (1 + thưởng), in kèm xếp loại.
 - Lọc nhân viên phòng IT có lương > 25 triệu vào mảng mới.
 - Tính tổng quỹ lương thực nhận của công ty.
+*/
+const nhanVien = [
+  { id: 1, ten: "An", phong: "IT", luong: 25000000, thamNien: 3 },
+  { id: 2, ten: "Bình", phong: "HR", luong: 18000000, thamNien: 5 },
+  { id: 3, ten: "Cường", phong: "IT", luong: 30000000, thamNien: 7 },
+  { id: 4, ten: "Dung", phong: "Sale", luong: 22000000, thamNien: 2 },
+  { id: 5, ten: "Hà", phong: "IT", luong: 28000000, thamNien: 4 },
+];
 
+const tinhThuong = (thamNien) => {
+  if (thamNien >= 5) {
+    return 0.2;
+  }
+  if (thamNien >= 3) {
+    return 0.1;
+  } else {
+    return 0.05;
+  }
+};
+return thamNien;
 
-
+/**
 Bài tập 6: Viết code JavaScript thuần giải quyết vấn đề thực tế.
 Kiến thức: tổng hợp + lọc mảng + gom nhóm theo loại.
 Cho dữ liệu kho hàng:
