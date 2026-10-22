@@ -211,7 +211,53 @@ const khoHang = [
 - Duyệt kho, in: mã, tên, trạng thái, giá trị tồn.
 - Lọc các sản phẩm cần nhập thêm (Sắp hết hoặc Hết hàng).
 - Tính tổng giá trị tồn kho theo từng loại (vpp và dientu).
+ */
+const khoHang = [
+  { ma: "SP1", ten: "Bút", soLuong: 120, gia: 5000, loai: "vpp" },
+  { ma: "SP2", ten: "Vở", soLuong: 8, gia: 12000, loai: "vpp" },
+  { ma: "SP3", ten: "Laptop", soLuong: 3, gia: 15000000, loai: "dientu" },
+  { ma: "SP4", ten: "Chuột", soLuong: 0, gia: 150000, loai: "dientu" },
+  { ma: "SP5", ten: "Thước", soLuong: 50, gia: 8000, loai: "vpp" },
+];
 
+function trangThai(soLuong) {
+  if (soLuong === 0) {
+    return "Hết hàng";
+  } else if (soLuong < 10) {
+    return "Sắp hết";
+  } else {
+    return "Còn hàng";
+  }
+}
+
+const giaTri = (sp) => sp.soLuong * sp.gia;
+
+console.log("=== DANH SÁCH KHO ===");
+khoHang.forEach((sp) => {
+  console.log(
+    `${sp.ma} | ${sp.ten} | ${trangThai(sp.soLuong)} | ${giaTri(sp)}`,
+  );
+});
+
+const canNhap = khoHang.filter((sp) => trangThai(sp.soLuong) !== "Còn hàng");
+console.log("Cần nhập:");
+canNhap.forEach((sp) => {
+  console.log(`${sp.ma} - ${sp.ten} (${trangThai(sp.soLuong)})`);
+});
+
+let tongVpp = 0;
+let tongDienTu = 0;
+khoHang.forEach((sp) => {
+  if (sp.loai === "vpp") {
+    tongVpp += giaTri(sp);
+  } else if (sp.loai === "dientu") {
+    tongDienTu += giaTri(sp);
+  }
+});
+console.log("Tổng giá trị theo loại:");
+console.log(`vpp: ${tongVpp}`);
+console.log(`dientu: ${tongDienTu}`);
+/**
 Bài tập 7: Dành cho học viên đã có nền tảng. Tính tiền điện theo bậc thang.
 Kiến thức: arrow function, vòng lặp, điều kiện nhiều bậc, tích lũy, tìm max.
 Biểu giá điện lũy tiến:
@@ -222,5 +268,17 @@ const soDien = [45, 90, 150, 320];   // số kWh của 4 hộ
 - Dùng vòng lặp in tiền điện từng hộ.
 - Tìm và in ra hộ có hóa đơn cao nhất.
 - (Thưởng) Cộng VAT 8% và in tổng tiền cả 4 hộ.
-
  */
+const tinhTienDien = (kWh) => {
+  let tien = 0;
+  if (kWh <= 50) {
+    tien = kWh * 1800;
+  } else if (kWh <= 100) {
+    tien = 50 * 1800 + (kWh - 50) * 1900;
+  } else if (kWh <= 200) {
+    tien = 50 * 1800 + 50 * 1900 + (kWh - 100) * 2200;
+  } else {
+    tien = 50 * 1800 + 50 * 1900 + 100 * 2200 + (kWh - 200) * 2800;
+  }
+  return tien;
+};
